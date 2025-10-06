@@ -1,0 +1,290 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1757206234d9df5781": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5f0975d_QTFMMG": {
+          "type": "ai_gen_block_5f0975d",
+          "settings": {
+            "banner_image": "shopify://shop_images/Christmas_2025_final.png",
+            "image_position": "center center",
+            "banner_height": 800,
+            "banner_height_mobile": 250
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5f0975d_QTFMMG"
+      ],
+      "settings": {}
+    },
+    "1757477237f41bd73d": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7810a1a_KNnkkx": {
+          "type": "ai_gen_block_7810a1a",
+          "settings": {
+            "card_width": 280,
+            "card_width_tablet": 240,
+            "card_width_mobile": 220,
+            "section_padding": 100,
+            "card_spacing": 20,
+            "image_aspect_ratio": "1/1",
+            "nav_button_size": 44,
+            "nav_button_color": "#ffffff",
+            "nav_button_hover_color": "#f5f5f5",
+            "nav_button_icon_color": "#000000",
+            "show_scroll_indicators": true,
+            "scroll_indicator_color": "#000000",
+            "background_color": "#ffffff",
+            "card_background_color": "#ffffff",
+            "title_color": "#000000",
+            "description_color": "#666666",
+            "card_border_radius": 8,
+            "card_border_width": 1,
+            "card_border_color": "#e5e5e5",
+            "card_content_padding": 20,
+            "hover_lift": 4,
+            "card_shadow_opacity": 10,
+            "card_shadow_vertical": 4,
+            "card_shadow_blur": 10,
+            "text_alignment": "center",
+            "title_font_size": 18,
+            "title_font_weight": "600",
+            "description_font_size": 12,
+            "card_1_enabled": true,
+            "card_1_image": "shopify://shop_images/vivalasvegasdzzler_tree.jpg",
+            "card_1_title": "Ornaments",
+            "card_1_description": "",
+            "card_1_link": "shopify://collections/christmas-ornaments",
+            "card_2_enabled": true,
+            "card_2_image": "shopify://shop_images/AnimalNutcrackersGarland.webp",
+            "card_2_title": "Garland",
+            "card_2_description": "",
+            "card_2_link": "shopify://collections/garlands",
+            "card_3_enabled": true,
+            "card_3_image": "shopify://shop_images/UPSIDE_DOWN_TREE_WHT_copy.png",
+            "card_3_title": "Trees",
+            "card_3_description": "",
+            "card_3_link": "shopify://collections/trees",
+            "card_4_enabled": true,
+            "card_4_image": "shopify://shop_images/JewelOfTheSeaFishOrnament_Pink_copy.png",
+            "card_4_title": "Under the Sea",
+            "card_4_description": "",
+            "card_4_link": "shopify://collections/under-the-sea",
+            "card_5_enabled": false,
+            "card_5_image": "shopify://shop_images/JewelOfTheSeaFishOrnament_Pink_copy.png",
+            "card_5_title": "Under the Sea",
+            "card_5_description": "",
+            "card_5_link": "shopify://collections/under-the-sea",
+            "card_6_enabled": false,
+            "card_6_title": "Accessories",
+            "card_6_description": "Complete your look",
+            "card_6_link": "",
+            "card_7_enabled": false,
+            "card_7_title": "Limited Edition",
+            "card_7_description": "Exclusive items",
+            "card_7_link": "",
+            "card_8_enabled": false,
+            "card_8_title": "Seasonal",
+            "card_8_description": "Season's favorites",
+            "card_8_link": "",
+            "card_9_enabled": false,
+            "card_9_title": "Bundles",
+            "card_9_description": "Save with bundles",
+            "card_9_link": "",
+            "card_10_enabled": false,
+            "card_10_title": "Clearance",
+            "card_10_description": "Final sale items",
+            "card_10_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7810a1a_KNnkkx"
+      ],
+      "custom_css": [
+        "div {padding-top: 10px;}"
+      ],
+      "settings": {}
+    },
+    "1757476361f507f6ca": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f9eebac_ic6zai": {
+          "type": "ai_gen_block_f9eebac",
+          "name": "Horizontal Image Menu",
+          "settings": {
+            "alignment": "center",
+            "item_spacing": 30,
+            "item_min_width": 120,
+            "padding_vertical": 20,
+            "padding_horizontal": 20,
+            "image_size": 120,
+            "image_border_radius": 8,
+            "text_size": 14,
+            "text_weight": "500",
+            "text_spacing": 8,
+            "background_color": "#ffffff",
+            "text_color": "#121212",
+            "text_hover_color": "#666666",
+            "item_1_enabled": true,
+            "item_1_image": "shopify://shop_images/HoldEmDazzlerOrnament_bb45d5ff-eaef-4c3e-aff3-c2b9cf88fac0.webp",
+            "item_1_text": "Ornaments",
+            "item_1_link": "shopify://collections/christmas-ornaments",
+            "item_2_enabled": true,
+            "item_2_image": "shopify://shop_images/AnimalNutcrackersGarland.webp",
+            "item_2_text": "Garland",
+            "item_2_link": "shopify://collections/garlands",
+            "item_3_enabled": true,
+            "item_3_image": "shopify://shop_images/UPSIDE_DOWN_TREE_WHT.jpg",
+            "item_3_text": "Trees",
+            "item_3_link": "shopify://collections/trees",
+            "item_4_enabled": true,
+            "item_4_image": "shopify://shop_images/XS410107BeadedPoinsettiaStem.jpg",
+            "item_4_text": "Stems and Sprays",
+            "item_4_link": "shopify://collections/stems",
+            "item_5_enabled": true,
+            "item_5_image": "shopify://shop_images/JewelOfTheSeaFishOrnament_Pink.jpg",
+            "item_5_text": "Under the Sea",
+            "item_5_link": "shopify://collections/under-the-sea",
+            "item_6_enabled": false,
+            "item_6_text": "",
+            "item_6_link": "",
+            "item_7_enabled": false,
+            "item_7_text": "",
+            "item_7_link": "",
+            "item_8_enabled": false,
+            "item_8_text": "",
+            "item_8_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f9eebac_ic6zai"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "175712395310c9f153": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_34870ce_en9DPX": {
+          "type": "ai_gen_block_34870ce",
+          "settings": {
+            "alignment": "center",
+            "item_spacing": 20,
+            "item_spacing_mobile": 12,
+            "mobile_layout": "wrap",
+            "background_color": "#f8f8f8",
+            "padding_vertical": 16,
+            "padding_horizontal": 24,
+            "border_radius": 8,
+            "border_thickness": 0,
+            "border_color": "#e0e0e0",
+            "text_color": "#333333",
+            "text_hover_color": "#000000",
+            "font_size": 16,
+            "font_size_mobile": 14,
+            "font_weight": "500",
+            "link_padding_vertical": 8,
+            "link_padding_horizontal": 12,
+            "link_background_color": "rgba(0,0,0,0)",
+            "link_hover_background_color": "#ffffff",
+            "link_border_radius": 4,
+            "link_border_thickness": 0,
+            "link_border_color": "#e0e0e0",
+            "link_hover_border_color": "#cccccc",
+            "show_separators": false,
+            "separator_color": "#e0e0e0",
+            "separator_height": 20,
+            "link_1_text": "Ornaments",
+            "link_1_url": "shopify://collections/christmas-ornaments",
+            "link_2_text": "Garland",
+            "link_2_url": "shopify://collections/garlands",
+            "link_3_text": "Trees",
+            "link_3_url": "shopify://collections/trees",
+            "link_4_text": "Stems and Sprays",
+            "link_4_url": "shopify://collections/stems",
+            "link_5_text": "Under the Sea",
+            "link_5_url": "shopify://collections/under-the-sea",
+            "link_6_text": "",
+            "link_6_url": "",
+            "link_7_text": "",
+            "link_7_url": "",
+            "link_8_text": "",
+            "link_8_url": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_34870ce_en9DPX"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "featured_collection_enPdyh": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "christmas",
+        "products_to_show": 24,
+        "title": "Christmas",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1757478422a69dc2cb": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "1757206234d9df5781",
+    "1757477237f41bd73d",
+    "1757476361f507f6ca",
+    "175712395310c9f153",
+    "main",
+    "featured_collection_enPdyh",
+    "1757478422a69dc2cb"
+  ]
+}

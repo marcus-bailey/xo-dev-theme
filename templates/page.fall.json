@@ -1,0 +1,118 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17572064656cc6030e": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "175712395310c9f153": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_34870ce_en9DPX": {
+          "type": "ai_gen_block_34870ce",
+          "disabled": true,
+          "settings": {
+            "alignment": "center",
+            "item_spacing": 20,
+            "item_spacing_mobile": 12,
+            "mobile_layout": "wrap",
+            "background_color": "#f8f8f8",
+            "padding_vertical": 16,
+            "padding_horizontal": 24,
+            "border_radius": 8,
+            "border_thickness": 0,
+            "border_color": "#e0e0e0",
+            "text_color": "#333333",
+            "text_hover_color": "#000000",
+            "font_size": 16,
+            "font_size_mobile": 14,
+            "font_weight": "500",
+            "link_padding_vertical": 8,
+            "link_padding_horizontal": 12,
+            "link_background_color": "rgba(0,0,0,0)",
+            "link_hover_background_color": "#ffffff",
+            "link_border_radius": 4,
+            "link_border_thickness": 0,
+            "link_border_color": "#e0e0e0",
+            "link_hover_border_color": "#cccccc",
+            "show_separators": true,
+            "separator_color": "#e0e0e0",
+            "separator_height": 20,
+            "link_1_text": "Halloween",
+            "link_1_url": "shopify://pages/halloween-collection",
+            "link_2_text": "Harvest",
+            "link_2_url": "shopify://pages/fall-collection",
+            "link_3_text": "",
+            "link_3_url": "",
+            "link_4_text": "",
+            "link_4_url": "",
+            "link_5_text": "",
+            "link_5_url": "",
+            "link_6_text": "",
+            "link_6_url": "",
+            "link_7_text": "",
+            "link_7_url": "",
+            "link_8_text": "",
+            "link_8_url": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_34870ce_en9DPX"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "featured_collection_enPdyh": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "fall",
+        "products_to_show": 24,
+        "title": "Fall Collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "17572064656cc6030e",
+    "175712395310c9f153",
+    "main",
+    "featured_collection_enPdyh"
+  ]
+}

@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/Christmas_2025_final.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "video_LxeM3k": {
+      "type": "video",
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/kling21pro_starting_from_far_away_up_in_the_sky_a_bright_and_d_0.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "halloween",
+        "products_to_show": 24,
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "1757056787f9607966": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ce3ad7a_34dXdQ": {
+          "type": "ai_gen_block_ce3ad7a",
+          "settings": {
+            "menu": "main-menu",
+            "layout": "row",
+            "alignment": "center",
+            "justify_content": "center",
+            "item_spacing": 16,
+            "mobile_layout": "column",
+            "mobile_item_spacing": 8,
+            "background_color": "#ffffff",
+            "text_color": "#121212",
+            "text_hover_color": "#000f9f",
+            "link_hover_background": "#f3f3f3",
+            "submenu_background_color": "#ffffff",
+            "submenu_text_color": "#121212",
+            "submenu_text_hover_color": "#000f9f",
+            "submenu_link_hover_background": "#f3f3f3",
+            "font_size": 16,
+            "font_weight": "400",
+            "submenu_font_size": 14,
+            "padding": 20,
+            "link_padding": 8,
+            "submenu_link_padding": 12,
+            "border_radius": 2,
+            "link_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ce3ad7a_34dXdQ"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_banner",
+    "video_LxeM3k",
+    "featured_collection",
+    "1757056787f9607966"
+  ]
+}

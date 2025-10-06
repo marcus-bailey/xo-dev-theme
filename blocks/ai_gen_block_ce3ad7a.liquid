@@ -1,0 +1,452 @@
+{% doc %}
+  @prompt
+    A menu which matches the menu in the header.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-menu-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-menu-list-{{ ai_gen_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: {{ block.settings.layout }};
+    gap: {{ block.settings.item_spacing }}px;
+    align-items: {{ block.settings.alignment }};
+    justify-content: {{ block.settings.justify_content }};
+    flex-wrap: wrap;
+  }
+
+  .ai-menu-item-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-menu-link-{{ ai_gen_id }} {
+    display: block;
+    color: {{ block.settings.text_color }};
+    text-decoration: none;
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    padding: {{ block.settings.link_padding }}px;
+    border-radius: {{ block.settings.link_border_radius }}px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-menu-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.text_hover_color }};
+    background-color: {{ block.settings.link_hover_background }};
+  }
+
+  .ai-menu-link-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.text_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-menu-submenu-{{ ai_gen_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: {{ block.settings.submenu_background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    z-index: 10;
+  }
+
+  .ai-menu-item-{{ ai_gen_id }}:hover .ai-menu-submenu-{{ ai_gen_id }} {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .ai-menu-submenu-link-{{ ai_gen_id }} {
+    display: block;
+    color: {{ block.settings.submenu_text_color }};
+    text-decoration: none;
+    font-size: {{ block.settings.submenu_font_size }}px;
+    padding: {{ block.settings.submenu_link_padding }}px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .ai-menu-submenu-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.submenu_text_hover_color }};
+    background-color: {{ block.settings.submenu_link_hover_background }};
+  }
+
+  .ai-menu-submenu-link-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.submenu_text_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-menu-submenu-item-{{ ai_gen_id }}:last-child .ai-menu-submenu-link-{{ ai_gen_id }} {
+    border-bottom: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-menu-list-{{ ai_gen_id }} {
+      flex-direction: {{ block.settings.mobile_layout }};
+      gap: {{ block.settings.mobile_item_spacing }}px;
+    }
+
+    .ai-menu-submenu-{{ ai_gen_id }} {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      background-color: transparent;
+      margin-top: 8px;
+      margin-left: 16px;
+    }
+
+    .ai-menu-submenu-link-{{ ai_gen_id }} {
+      border-bottom: none;
+      padding: 8px 0;
+    }
+  }
+{% endstyle %}
+
+<nav class="ai-menu-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.menu != blank %}
+    <ul class="ai-menu-list-{{ ai_gen_id }}">
+      {% for link in block.settings.menu.links %}
+        <li class="ai-menu-item-{{ ai_gen_id }}">
+          <a 
+            href="{{ link.url }}" 
+            class="ai-menu-link-{{ ai_gen_id }}"
+            {% if link.current %}aria-current="page"{% endif %}
+          >
+            {{ link.title }}
+          </a>
+          
+          {% if link.links.size > 0 %}
+            <ul class="ai-menu-submenu-{{ ai_gen_id }}">
+              {% for child_link in link.links %}
+                <li class="ai-menu-submenu-item-{{ ai_gen_id }}">
+                  <a 
+                    href="{{ child_link.url }}" 
+                    class="ai-menu-submenu-link-{{ ai_gen_id }}"
+                    {% if child_link.current %}aria-current="page"{% endif %}
+                  >
+                    {{ child_link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="ai-menu-empty-state-{{ ai_gen_id }}">
+      <p style="color: {{ block.settings.text_color }}; text-align: center; margin: 0;">
+        Select a menu to display navigation links
+      </p>
+    </div>
+  {% endif %}
+</nav>
+
+{% schema %}
+{
+  "name": "Navigation menu",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Start"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "End"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "justify_content",
+      "label": "Justify content",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Start"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "End"
+        },
+        {
+          "value": "space-between",
+          "label": "Space between"
+        },
+        {
+          "value": "space-around",
+          "label": "Space around"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile item spacing",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "text_hover_color",
+      "label": "Text hover color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_background",
+      "label": "Link hover background",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "submenu_background_color",
+      "label": "Submenu background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "submenu_text_color",
+      "label": "Submenu text color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "submenu_text_hover_color",
+      "label": "Submenu text hover color",
+      "default": "#000f9f"
+    },
+    {
+      "type": "color",
+      "id": "submenu_link_hover_background",
+      "label": "Submenu link hover background",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "submenu_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Submenu font size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Container padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "link_padding",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Link padding",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "submenu_link_padding",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Submenu link padding",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Border radius"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Container border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "link_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Link border radius",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navigation menu"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}
