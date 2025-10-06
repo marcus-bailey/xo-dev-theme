@@ -125,16 +125,7 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
-              {% comment %}
-                <span
-                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                  class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-                >
-                  {{- 'products.product.sold_out' | t -}}
-                </span>
-              {% endcomment %}
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            {%- if card_product.compare_at_price > card_product.price and card_product.available -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
@@ -149,7 +140,7 @@
         <div class="card__information">
           {%- if show_vendor -%}
             <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-            <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            <div class="product-card-vendor">{{ card_product.vendor }}</div>
           {%- endif -%}
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
@@ -167,13 +158,6 @@
             </a>
           </h3>
           <div class="card-information">
-            {% comment %}
-              {%- if show_vendor -%}
-                <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-                <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-              {%- endif -%}
-            {% endcomment %}
-
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
@@ -214,6 +198,14 @@
 
             {%- if card_product.available -%}
               {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+              {%- comment -%} Free Shipping Indicator {%- endcomment -%}
+              {%- if card_product.tags contains 'free-shipping' or card_product.tags contains 'freeshipping' -%}
+                <div class="free-shipping-indicator">
+                  <span class="free-shipping-text">
+                    {{- 'products.product.free_shipping' | t | default: 'Free Shipping' -}}
+                  </span>
+                </div>
+              {%- endif -%}
             {%- else -%}
               <div class="price" style="color: red; font-weight: bold;">
                 {{ 'products.product.sold_out' | t }}
@@ -279,7 +271,7 @@
                         <li>
                           <span>{{ card_product.selected_or_first_available_variant.quantity_rule.min }}+</span>
                           {%- assign price = card_product.selected_or_first_available_variant.price
-                            | money_with_currency
+                            | money_without_currency
                           -%}
                           <span>{{ 'sections.quick_order_list.each' | t: money: price }}</span>
                         </li>
@@ -289,7 +281,7 @@
                               {{- price_break.minimum_quantity -}}
                               <span aria-hidden="true">+</span></span
                             >
-                            {%- assign price = price_break.price | money_with_currency -%}
+                            {%- assign price = price_break.price | money_without_currency -%}
                             <span> {{ 'sections.quick_order_list.each' | t: money: price }}</span>
                           </li>
                         {%- endfor -%}

@@ -3595,3 +3595,37 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* Free Shipping Indicator Styles */
+.free-shipping-indicator {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.free-shipping-text {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+/* Alternative style for dark themes */
+.color-scheme-1 .free-shipping-text,
+.color-scheme-2 .free-shipping-text {
+  background-color: var(--color-success);
+  color: var(--color-background);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 749px) {
+  .free-shipping-text {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+}

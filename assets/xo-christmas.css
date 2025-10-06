@@ -1,0 +1,5 @@
+.product-card-vendor {
+    font-weight: var(--font-body-weight-bold);
+    font-size: 1.4rem;
+    color: #000;
+}
